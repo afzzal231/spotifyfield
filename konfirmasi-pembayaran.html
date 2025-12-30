@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Berhasil - SportifyField</title>
+    <meta name="description" content="Konfirmasi pembayaran booking lapangan berhasil">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Asset/Navbar.png" alt="SportifyField Logo" class="logo-img">
+                    <span class="logo-text">SportifyField</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="lapangan.html" class="nav-link">Lapangan</a>
+                </nav>
+                <div class="nav-actions">
+                    <!-- Content will be injected by nav.js -->
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Section -->
+    <section class="success-section">
+        <div class="container">
+            <div class="success-content">
+                <!-- Success Header -->
+                <div class="success-header">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h1 class="success-title">Pembayaran Berhasil!</h1>
+                    <p class="success-subtitle">Booking Anda telah dikonfirmasi dan siap digunakan</p>
+                </div>
+
+                <!-- Booking Card -->
+                <div class="success-card">
+                    <!-- Booking ID -->
+                    <div class="booking-id-section">
+                        <div class="booking-id-left">
+                            <span class="booking-id-label">ID Booking</span>
+                            <span class="booking-id-value" id="bookingId">LPR99773734</span>
+                        </div>
+                        <span class="booking-status">Konfirmasi</span>
+                    </div>
+
+                    <!-- Venue Info -->
+                    <div class="success-venue-section">
+                        <h4 class="section-label">Informasi Lapangan</h4>
+                        <div class="success-venue-info">
+                            <img src="Asset/Lapangan Tennis.jpg" alt="Lapangan Tennis" class="success-venue-img">
+                            <div class="success-venue-details">
+                                <h3 class="success-venue-name" id="venueName">Lapangan Tennis Bank Jabar</h3>
+                                <p class="success-venue-location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Kota Bandung, Jawa Barat
+                                </p>
+                                <span class="venue-tag">Tennis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date & Time -->
+                    <div class="success-datetime">
+                        <div class="datetime-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div class="datetime-details">
+                                <span class="datetime-label">Tanggal</span>
+                                <span class="datetime-value" id="bookingDate">Kamis, 25 Desember 2025</span>
+                            </div>
+                        </div>
+                        <div class="datetime-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="datetime-details">
+                                <span class="datetime-label">Waktu</span>
+                                <span class="datetime-value" id="bookingTime">17:00 (1 jam)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details -->
+                    <div class="payment-details-section">
+                        <h4 class="section-label">Detail Pembayaran</h4>
+                        <div class="payment-detail-rows">
+                            <div class="payment-detail-row">
+                                <span class="payment-detail-label">Metode Pembayaran</span>
+                                <span class="payment-detail-value" id="paymentMethod">Gopay</span>
+                            </div>
+                            <div class="payment-detail-row">
+                                <span class="payment-detail-label">Tanggal Pembayaran</span>
+                                <span class="payment-detail-value" id="paymentDate">25 Des 2025, 01:09</span>
+                            </div>
+                            <div class="payment-detail-row">
+                                <span class="payment-detail-label">Subtotal</span>
+                                <span class="payment-detail-value" id="subtotal">Rp 150.000</span>
+                            </div>
+                            <div class="payment-detail-row">
+                                <span class="payment-detail-label">Biaya Admin</span>
+                                <span class="payment-detail-value highlight-green">Gratis</span>
+                            </div>
+                            <div class="payment-detail-row total-row">
+                                <span class="payment-detail-label">Total Dibayar</span>
+                                <span class="payment-detail-value total-value" id="totalPaid">Rp 150.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="notes-card">
+                    <h4 class="notes-title">Catatan Penting</h4>
+                    <ul class="notes-list">
+                        <li>Simpan ID booking Anda untuk check-in</li>
+                        <li>Tunjukkan bukti booking ini saat tiba di venue</li>
+                        <li>Harap datang 10-15 menit sebelum waktu booking</li>
+                        <li>Email konfirmasi telah dikirim ke alamat email Anda</li>
+                    </ul>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="success-actions">
+                    <button class="btn-download" onclick="alert('Fitur download akan tersedia segera!')">
+                        <i class="fas fa-download"></i>
+                        Download Bukti Booking
+                    </button>
+                    <a href="dashboard.html" class="btn-view-bookings">
+                        Lihat Semua Booking
+                    </a>
+                </div>
+
+                <a href="index.html" class="back-home-link">Kembali ke Beranda</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">SportifyField</div>
+                    <p class="footer-description">Platform terpercaya Anda untuk memesan fasilitas olahraga. Memudahkan
+                        booking venue dengan mudah.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontak Kami</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sportifyfield.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bandung, Indonesia</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 SportifyField. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initNavigation } from "./nav.js";
+        initNavigation();
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+        const monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+
+        function loadConfirmationData() {
+            // Generate random booking ID
+            const bookingId = 'LPR' + Math.floor(10000000 + Math.random() * 90000000);
+            document.getElementById('bookingId').textContent = bookingId;
+
+            // Try to get data from localStorage or use mock data
+            const bookingDataStr = localStorage.getItem('confirmationData');
+            const bookingData = bookingDataStr ? JSON.parse(bookingDataStr) : {
+                venue: 'Lapangan Tennis Bank Jabar',
+                date: new Date().toISOString(),
+                time: '17:00',
+                duration: 1,
+                pricePerHour: 150000,
+                total: 150000,
+                paymentMethod: 'Gopay'
+            };
+
+            // Format date
+            const bookingDate = new Date(bookingData.date);
+            const dayName = dayNames[bookingDate.getDay()];
+            const formattedDate = `${dayName}, ${bookingDate.getDate()} ${monthNames[bookingDate.getMonth()]} ${bookingDate.getFullYear()}`;
+
+            // Update UI
+            document.getElementById('venueName').textContent = bookingData.venue;
+            document.getElementById('bookingDate').textContent = formattedDate;
+            document.getElementById('bookingTime').textContent = `${bookingData.time} (${bookingData.duration} jam)`;
+            document.getElementById('paymentMethod').textContent = bookingData.paymentMethod || 'Gopay';
+
+            // Payment date
+            const now = new Date();
+            const paymentDateFormatted = `${now.getDate()} ${monthNames[now.getMonth()].substring(0, 3)} ${now.getFullYear()}, ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+            document.getElementById('paymentDate').textContent = paymentDateFormatted;
+
+            document.getElementById('subtotal').textContent = `Rp ${bookingData.total.toLocaleString('id-ID')}`;
+            document.getElementById('totalPaid').textContent = `Rp ${bookingData.total.toLocaleString('id-ID')}`;
+
+            // Clear localStorage
+            localStorage.removeItem('confirmationData');
+            localStorage.removeItem('bookingData');
+        }
+
+        document.addEventListener('DOMContentLoaded', loadConfirmationData);
+    </script>
+</body>
+
+</html>

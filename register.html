@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SportifyField</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Register Page V2 Styles */
+        .register-page-v2 {
+            min-height: calc(100vh - 80px);
+            background: #F9FAFB;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            margin-top: 80px;
+        }
+
+        .register-container-v2 {
+            width: 100%;
+            max-width: 420px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px 32px;
+        }
+
+        .register-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .register-logo-box {
+            width: 64px;
+            height: 64px;
+            background: #DC2626;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-logo-box img {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        .register-title-v2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1A1A1A;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .register-subtitle-v2 {
+            font-size: 14px;
+            color: #6B7280;
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .form-group-v2 {
+            margin-bottom: 20px;
+        }
+
+        .form-label-v2 {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper-v2 {
+            position: relative;
+        }
+
+        .input-wrapper-v2 i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9CA3AF;
+            font-size: 16px;
+        }
+
+        .input-wrapper-v2 input {
+            width: 100%;
+            padding: 14px 14px 14px 44px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #374151;
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .input-wrapper-v2 input:focus {
+            outline: none;
+            border-color: #DC2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .input-wrapper-v2 input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .terms-text-v2 {
+            font-size: 13px;
+            color: #6B7280;
+            text-align: center;
+            line-height: 1.6;
+            margin: 24px 0;
+        }
+
+        .btn-register-v2 {
+            width: 100%;
+            padding: 14px 24px;
+            background: #DC2626;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-register-v2:hover {
+            background: #B91C1C;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-register-v2:disabled {
+            background: #9CA3AF;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .register-footer-v2 {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .register-footer-v2 a {
+            color: #DC2626;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .register-footer-v2 a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home-link {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-home-link:hover {
+            color: #DC2626;
+        }
+
+        @media (max-width: 480px) {
+            .register-container-v2 {
+                padding: 32px 24px;
+            }
+
+            .register-title-v2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Asset/Navbar.png" alt="SportifyField Logo" class="logo-img">
+                    <span class="logo-text">SportifyField</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="lapangan.html" class="nav-link">Lapangan</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-link" id="nav-login">Login</a>
+                    <a href="register.html" class="btn-register" id="nav-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Register Section -->
+    <section class="register-page-v2">
+        <div class="register-container-v2">
+            <!-- Logo -->
+            <div class="register-logo">
+                <img src="Asset/Navbar.png" alt="SportifyField" style="width: 64px; height: 64px;">
+            </div>
+
+            <!-- Title -->
+            <h1 class="register-title-v2">Buat Akun</h1>
+            <p class="register-subtitle-v2">Bergabunglah dengan kami untuk mulai memesan lapangan olahraga.</p>
+
+            <!-- Form -->
+            <form id="registerForm">
+                <div class="form-group-v2">
+                    <label class="form-label-v2">Nama Lengkap</label>
+                    <div class="input-wrapper-v2">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" id="fullname" placeholder="Muthia Luthfi N" required>
+                    </div>
+                </div>
+
+                <div class="form-group-v2">
+                    <label class="form-label-v2">Email</label>
+                    <div class="input-wrapper-v2">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group-v2">
+                    <label class="form-label-v2">Nomor Telepon</label>
+                    <div class="input-wrapper-v2">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" id="phone" placeholder="+62 812-3456-7890" required>
+                    </div>
+                </div>
+
+                <div class="form-group-v2">
+                    <label class="form-label-v2">Kata Sandi</label>
+                    <div class="input-wrapper-v2">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <div class="form-group-v2">
+                    <label class="form-label-v2">Konfirmasi Kata Sandi</label>
+                    <div class="input-wrapper-v2">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="confirmPassword" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <p class="terms-text-v2">
+                    Saya setuju dengan Syarat dan Ketentuan Layanan serta Kebijakan Privasi.
+                </p>
+
+                <button type="button" id="registerBtn" class="btn-register-v2">
+                    Buat Akun
+                </button>
+            </form>
+
+            <p class="register-footer-v2">
+                Sudah punya akun? <a href="login.html">Login disini</a>
+            </p>
+        </div>
+
+        <a href="index.html" class="back-home-link">Kembali ke Beranda</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">SportifyField</div>
+                    <p class="footer-description">Platform terpercaya Anda untuk memesan fasilitas olahraga. Memudahkan
+                        booking venue dengan mudah.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontak Kami</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sportifyfield.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bandung, Indonesia</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 SportifyField. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FIREBASE SCRIPT -->
+    <script type="module">
+        import { registerUser, onAuthStateChange } from "./auth.js";
+        import { initNavigation } from "./nav.js";
+
+        // Initialize Navigation UI
+        initNavigation();
+
+        // If already logged in, redirect to home
+        onAuthStateChange((user) => {
+            if (user) {
+                window.location.href = "index.html";
+            }
+        });
+
+        document.getElementById("registerBtn").addEventListener("click", async () => {
+            const name = document.getElementById("fullname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const password = document.getElementById("password").value;
+            const confirm = document.getElementById("confirmPassword").value;
+
+            // Validasi
+            if (!name || !email || !phone || !password || !confirm) {
+                alert("Harap isi semua field");
+                return;
+            }
+
+            if (password.length < 6) {
+                alert("Password minimal 6 karakter");
+                return;
+            }
+
+            if (password !== confirm) {
+                alert("Password tidak sama");
+                return;
+            }
+
+            try {
+                const btn = document.getElementById("registerBtn");
+                btn.textContent = "Mendaftar...";
+                btn.disabled = true;
+
+                await registerUser({ name, email, phone, password });
+                alert("Register berhasil! Silakan login");
+                window.location.href = "login.html";
+            } catch (err) {
+                console.error("Registration error:", err.code, err.message);
+                let message = "Registrasi gagal";
+                if (err.code === "auth/email-already-in-use") {
+                    message = "Email sudah terdaftar";
+                } else if (err.code === "auth/invalid-email") {
+                    message = "Format email tidak valid";
+                } else if (err.code === "auth/weak-password") {
+                    message = "Password terlalu lemah (minimal 6 karakter)";
+                } else if (err.code === "auth/network-request-failed") {
+                    message = "Koneksi internet bermasalah";
+                } else if (err.code === "auth/operation-not-allowed") {
+                    message = "Email/Password sign-in belum diaktifkan di Firebase Console";
+                } else {
+                    message = "Registrasi gagal: " + err.message;
+                }
+                alert(message);
+
+                const btn = document.getElementById("registerBtn");
+                btn.textContent = "Buat Akun";
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+
+</html>

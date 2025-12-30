@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapangan - SportifyField</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Asset/Navbar.png" alt="SportifyField Logo" class="logo-img">
+                    <span class="logo-text">SportifyField</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="lapangan.html" class="nav-link active">Lapangan</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fields Section -->
+    <section class="fields-section-v2">
+        <div class="container">
+            <div class="fields-header-v2">
+                <h1 class="fields-title-v2">Daftar Lapangan</h1>
+                <p class="fields-subtitle-v2">Temukan lapangan yang sempurna untuk permainan Anda</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar-v2">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cari lapangan atau lokasi...">
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section-v2">
+                <div class="filter-toggle" onclick="toggleFilter()">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Filter Pencarian</span>
+                    <i class="fas fa-chevron-down filter-arrow"></i>
+                </div>
+                <div class="filter-dropdowns" id="filterDropdowns">
+                    <div class="filter-group">
+                        <div class="filter-label-v2">
+                            <i class="fas fa-running"></i> Jenis Olahraga
+                        </div>
+                        <select class="filter-select-v2">
+                            <option>Semua Olahraga</option>
+                            <option>Tennis</option>
+                            <option>Padel</option>
+                            <option>Badminton</option>
+                            <option>Futsal</option>
+                            <option>Renang</option>
+                            <option>Basket</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-label-v2">
+                            <i class="fas fa-map-marker-alt"></i> Lokasi
+                        </div>
+                        <select class="filter-select-v2">
+                            <option>Semua Lokasi</option>
+                            <option>Bandung</option>
+                            <option>Jakarta</option>
+                            <option>Surabaya</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-label-v2">
+                            <i class="fas fa-dollar-sign"></i> Harga
+                        </div>
+                        <select class="filter-select-v2">
+                            <option>Semua Harga</option>
+                            <option>Kurang dari Rp 100.000</option>
+                            <option>Rp 100.000 - 200.000</option>
+                            <option>Lebih dari Rp 200.000</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-label-v2">
+                            <i class="fas fa-star"></i> Rating
+                        </div>
+                        <select class="filter-select-v2">
+                            <option>Semua Rating</option>
+                            <option>4.5+</option>
+                            <option>4.0+</option>
+                            <option>3.5+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <div class="filter-label-v2">
+                            Ketersediaan
+                        </div>
+                        <select class="filter-select-v2">
+                            <option>Semua Lapangan</option>
+                            <option>Tersedia</option>
+                            <option>Penuh</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fields Grid -->
+            <div class="fields-grid-v2">
+                <!-- Field Card 1 -->
+                <a href="detail-lapangan.html" class="field-card-v2">
+                    <div class="field-image-wrapper-v2">
+                        <img src="Asset/Lapangan Tennis.jpg" alt="Lapangan Tennis Bank Jabar">
+                        <span class="field-badge-v2 badge-tennis">Tennis</span>
+                    </div>
+                    <div class="field-info-v2">
+                        <h3 class="field-name-v2">Lapangan Tennis Bank Jabar</h3>
+                        <p class="field-location-v2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kota Bandung, Jawa Barat
+                        </p>
+                        <div class="field-bottom-v2">
+                            <div class="field-rating-v2">
+                                <i class="fas fa-star"></i> 4.8
+                            </div>
+                            <div class="field-price-v2">Rp 150.000/jam</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Field Card 2 -->
+                <a href="detail-lapangan.html" class="field-card-v2">
+                    <div class="field-image-wrapper-v2">
+                        <img src="Asset/Lapangan Padel.jpg" alt="Padelwood Bandung">
+                        <span class="field-badge-v2 badge-padel">Padel</span>
+                    </div>
+                    <div class="field-info-v2">
+                        <h3 class="field-name-v2">Padelwood Bandung</h3>
+                        <p class="field-location-v2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kota bandung, Jawa Barat
+                        </p>
+                        <div class="field-bottom-v2">
+                            <div class="field-rating-v2">
+                                <i class="fas fa-star"></i> 4.7
+                            </div>
+                            <div class="field-price-v2">Rp 350.000/jam</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Field Card 3 -->
+                <a href="detail-lapangan.html" class="field-card-v2">
+                    <div class="field-image-wrapper-v2">
+                        <img src="Asset/Badminton.jpeg" alt="Gor United">
+                        <span class="field-badge-v2 badge-bad">Badminton</span>
+                    </div>
+                    <div class="field-info-v2">
+                        <h3 class="field-name-v2">Gor United</h3>
+                        <p class="field-location-v2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kota Bandung, Jawa Barat
+                        </p>
+                        <div class="field-bottom-v2">
+                            <div class="field-rating-v2">
+                                <i class="fas fa-star"></i> 4.9
+                            </div>
+                            <div class="field-price-v2">Rp 75.000/jam</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Field Card 4 -->
+                <a href="detail-lapangan.html" class="field-card-v2">
+                    <div class="field-image-wrapper-v2">
+                        <img src="Asset/Lapangan Futsal.jpeg" alt="Futsal Rajawali 12">
+                        <span class="field-badge-v2 badge-futsal">Futsal</span>
+                    </div>
+                    <div class="field-info-v2">
+                        <h3 class="field-name-v2">Futsal Rajawali 12</h3>
+                        <p class="field-location-v2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kabupaten Bandung, Jawa Barat
+                        </p>
+                        <div class="field-bottom-v2">
+                            <div class="field-rating-v2">
+                                <i class="fas fa-star"></i> 4.6
+                            </div>
+                            <div class="field-price-v2">Rp 120.000/jam</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Field Card 5 -->
+                <a href="detail-lapangan.html" class="field-card-v2">
+                    <div class="field-image-wrapper-v2">
+                        <img src="Asset/Renang.jpeg" alt="Batununggal Sport Centre">
+                        <span class="field-badge-v2 badge-renang">Renang</span>
+                    </div>
+                    <div class="field-info-v2">
+                        <h3 class="field-name-v2">Batununggal Sport Centre</h3>
+                        <p class="field-location-v2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kota Bandung, Jawa Barat
+                        </p>
+                        <div class="field-bottom-v2">
+                            <div class="field-rating-v2">
+                                <i class="fas fa-star"></i> 4.5
+                            </div>
+                            <div class="field-price-v2">Rp 50.000/jam</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Field Card 6 -->
+                <a href="detail-lapangan.html" class="field-card-v2">
+                    <div class="field-image-wrapper-v2">
+                        <img src="Asset/Lapangan Basket.jpeg" alt="Boxone Basketball">
+                        <span class="field-badge-v2 badge-basket">Basket</span>
+                    </div>
+                    <div class="field-info-v2">
+                        <h3 class="field-name-v2">Boxone Basketball</h3>
+                        <p class="field-location-v2">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kota Bandung, Jawa Barat
+                        </p>
+                        <div class="field-bottom-v2">
+                            <div class="field-rating-v2">
+                                <i class="fas fa-star"></i> 4.4
+                            </div>
+                            <div class="field-price-v2">Rp 175.000/jam</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFilter() {
+            const filterDropdowns = document.getElementById('filterDropdowns');
+            const filterArrow = document.querySelector('.filter-arrow');
+            filterDropdowns.classList.toggle('show');
+            filterArrow.classList.toggle('rotate');
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">SportifyField</div>
+                    <p class="footer-description">Platform terpercaya Anda untuk memesan fasilitas olahraga. Memudahkan
+                        booking venue dengan mudah.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontak Kami</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sportifyfield.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bandung, Indonesia</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 SportifyField. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initNavigation } from "./nav.js";
+        initNavigation();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

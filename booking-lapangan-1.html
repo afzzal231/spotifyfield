@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Lapangan 1 - SportField</title>
+    <meta name="description" content="Pesan Lapangan Tennis Bank Jabar di SportField">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Asset/Navbar.png" alt="SportField Logo" class="logo-img">
+                    <span class="logo-text">SportField</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="lapangan.html" class="nav-link active">Lapangan</a>
+                </nav>
+                <div class="nav-actions">
+                    <!-- Content will be injected by nav.js -->
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Section -->
+    <section class="booking-section-v2">
+        <div class="container">
+            <a href="detail-lapangan.html" class="back-link-v2">
+                <i class="fas fa-chevron-left"></i> Kembali ke Detail Lapangan
+            </a>
+
+            <h1 class="booking-title-v2">Booking Lapangan</h1>
+
+            <!-- Stepper Navigation -->
+            <div class="booking-stepper">
+                <div class="step-item active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <div class="step-info">
+                        <span class="step-label">Langkah 1</span>
+                        <span class="step-name">Pilih Tanggal</span>
+                    </div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="2">
+                    <div class="step-circle">2</div>
+                    <div class="step-info">
+                        <span class="step-label">Langkah 2</span>
+                        <span class="step-name">Pilih Jam</span>
+                    </div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="3">
+                    <div class="step-circle">3</div>
+                    <div class="step-info">
+                        <span class="step-label">Langkah 3</span>
+                        <span class="step-name">Konfirmasi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booking Guidance -->
+            <div class="booking-guidance">
+                <i class="fas fa-info-circle"></i>
+                <span><strong>Panduan Booking:</strong> Pilih tanggal booking → Pilih jam yang tersedia → Pilih durasi →
+                    Konfirmasi booking Anda</span>
+            </div>
+
+            <div class="booking-wrapper-v2">
+                <!-- Left Column - Booking Form -->
+                <div class="booking-left-v2">
+                    <!-- Venue Info Card -->
+                    <div class="booking-card-v2">
+                        <div class="card-header-v2">
+                            <i class="fas fa-map-marker-alt location-icon"></i>
+                            <h3>Informasi Lapangan</h3>
+                        </div>
+                        <div class="venue-info-v2">
+                            <img src="Asset/Lapangan Tennis.jpg" alt="Lapangan Tennis Bank Jabar"
+                                class="venue-thumb-v2">
+                            <div class="venue-details-v2">
+                                <h4 class="venue-name-booking">Lapangan Tennis Bank Jabar</h4>
+                                <p class="venue-location-booking">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    kota Bandung, Jawa Barat
+                                </p>
+                                <p class="venue-price-v2">Rp 150.000/jam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Booking Steps Card -->
+                    <div class="booking-card-v2">
+                        <div class="booking-steps-header">
+                            <div class="step-indicator-item">
+                                <span class="step-num">1</span>
+                                <span class="step-text">Pilih Tanggal</span>
+                            </div>
+                            <div class="step-indicator-item">
+                                <span class="step-num">2</span>
+                                <span class="step-text">Pilih Jam</span>
+                            </div>
+                            <div class="step-indicator-item">
+                                <span class="step-num">3</span>
+                                <span class="step-text">Pilih Durasi</span>
+                            </div>
+                        </div>
+
+                        <div class="booking-dropdowns">
+                            <div class="dropdown-group">
+                                <div class="dropdown-select" id="dateDropdown">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span id="selectedDate">dd/mm/yyyy</span>
+                                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                                </div>
+                                <!-- Date Picker Calendar -->
+                                <div class="date-picker-popup" id="datePickerPopup">
+                                    <div class="calendar-header-v2">
+                                        <button class="cal-nav-btn" id="prevMonth">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <span class="cal-month-year" id="calendarMonthYear">Desember 2025</span>
+                                        <button class="cal-nav-btn" id="nextMonth">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                    <div class="calendar-weekdays-v2">
+                                        <span>Min</span>
+                                        <span>Sen</span>
+                                        <span>Sel</span>
+                                        <span>Rab</span>
+                                        <span>Kam</span>
+                                        <span>Jum</span>
+                                        <span>Sab</span>
+                                    </div>
+                                    <div class="calendar-days-v2" id="calendarDays">
+                                        <!-- Days will be generated by JS -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-group">
+                                <div class="dropdown-select" id="timeDropdown">
+                                    <i class="fas fa-clock"></i>
+                                    <span id="selectedTime">08.00</span>
+                                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                                </div>
+                                <div class="dropdown-menu time-options" id="timeMenu">
+                                    <div class="dropdown-item" data-time="07:00">07:00</div>
+                                    <div class="dropdown-item" data-time="08:00">08:00</div>
+                                    <div class="dropdown-item" data-time="09:00">09:00</div>
+                                    <div class="dropdown-item" data-time="10:00">10:00</div>
+                                    <div class="dropdown-item" data-time="11:00">11:00</div>
+                                    <div class="dropdown-item" data-time="12:00">12:00</div>
+                                    <div class="dropdown-item" data-time="13:00">13:00</div>
+                                    <div class="dropdown-item" data-time="14:00">14:00</div>
+                                    <div class="dropdown-item" data-time="15:00">15:00</div>
+                                    <div class="dropdown-item" data-time="16:00">16:00</div>
+                                    <div class="dropdown-item" data-time="17:00">17:00</div>
+                                    <div class="dropdown-item" data-time="18:00">18:00</div>
+                                    <div class="dropdown-item" data-time="19:00">19:00</div>
+                                    <div class="dropdown-item" data-time="20:00">20:00</div>
+                                    <div class="dropdown-item" data-time="21:00">21:00</div>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-group">
+                                <div class="dropdown-select" id="durationDropdown">
+                                    <i class="fas fa-hourglass-half"></i>
+                                    <span id="selectedDuration">1 Jam</span>
+                                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                                </div>
+                                <div class="dropdown-menu duration-options" id="durationMenu">
+                                    <div class="dropdown-item" data-duration="1">1 Jam</div>
+                                    <div class="dropdown-item" data-duration="2">2 Jam</div>
+                                    <div class="dropdown-item" data-duration="3">3 Jam</div>
+                                    <div class="dropdown-item" data-duration="4">4 Jam</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Booking Summary -->
+                <div class="booking-right-v2">
+                    <div class="booking-summary-v2">
+                        <h3 class="summary-title-v2">Ringkasan Booking</h3>
+
+                        <div class="summary-details-v2">
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Lapangan</span>
+                                <span class="summary-value-v2" id="summaryVenue">Lapangan Tennis Bank Jabar</span>
+                            </div>
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Tanggal</span>
+                                <span class="summary-value-v2" id="summaryDate">Ka, Des 25, 2025</span>
+                            </div>
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Jam</span>
+                                <span class="summary-value-v2" id="summaryTime">-</span>
+                            </div>
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Durasi</span>
+                                <span class="summary-value-v2" id="summaryDuration">1 Jam</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="summary-pricing-v2">
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Harga per jam</span>
+                                <span class="summary-value-v2">Rp 150.000</span>
+                            </div>
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Durasi</span>
+                                <span class="summary-value-v2" id="summaryDurationPrice">1 jam</span>
+                            </div>
+                            <div class="summary-row-v2 summary-total-v2">
+                                <span class="summary-label-v2">Total</span>
+                                <span class="summary-value-v2 total-price-v2" id="summaryTotal">Rp 150.000</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-confirm-v2" id="confirmBooking">
+                            Konfirmasi Pemesanan
+                        </button>
+
+                        <p class="booking-terms-v2">
+                            Dengan mengkonfirmasi, Anda menyetujui syarat dan ketentuan kami.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">SportifyField</div>
+                    <p class="footer-description">Platform terpercaya Anda untuk memesan fasilitas olahraga. Memudahkan
+                        booking venue dengan mudah.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontak Kami</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sportifyfield.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bandung, Indonesia</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 SportifyField. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initNavigation } from "./nav.js";
+        initNavigation();
+    </script>
+
+    <script>
+        // Booking Page JavaScript - V2 Design
+        const bookingData = {
+            venue: 'Lapangan Tennis Bank Jabar',
+            venueId: 'lapangan-1',
+            pricePerHour: 150000,
+            date: null,
+            time: null,
+            duration: 1
+        };
+
+        // Indonesian month names
+        const monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        const shortDayNames = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+
+        let currentDate = new Date();
+        let selectedDate = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            initCalendar();
+            initDropdowns();
+            updateSummary();
+        });
+
+        // Calendar Functions
+        function initCalendar() {
+            renderCalendar();
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+        }
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            document.getElementById('calendarMonthYear').textContent = `${monthNames[month]} ${year}`;
+
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const startingDay = firstDay.getDay();
+            const totalDays = lastDay.getDate();
+
+            const calendarDays = document.getElementById('calendarDays');
+            calendarDays.innerHTML = '';
+
+            // Previous month days
+            const prevMonthLastDay = new Date(year, month, 0).getDate();
+            for (let i = startingDay - 1; i >= 0; i--) {
+                const dayEl = document.createElement('button');
+                dayEl.className = 'cal-day other-month';
+                dayEl.textContent = prevMonthLastDay - i;
+                dayEl.disabled = true;
+                calendarDays.appendChild(dayEl);
+            }
+
+            // Current month days
+            const today = new Date();
+            for (let i = 1; i <= totalDays; i++) {
+                const dayEl = document.createElement('button');
+                dayEl.className = 'cal-day';
+                dayEl.textContent = i;
+
+                const dateToCheck = new Date(year, month, i);
+                if (dateToCheck < new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
+                    dayEl.className += ' past-day';
+                    dayEl.disabled = true;
+                } else {
+                    dayEl.addEventListener('click', () => selectDate(year, month, i, dayEl));
+                }
+
+                if (selectedDate &&
+                    selectedDate.getFullYear() === year &&
+                    selectedDate.getMonth() === month &&
+                    selectedDate.getDate() === i) {
+                    dayEl.className += ' selected';
+                }
+
+                calendarDays.appendChild(dayEl);
+            }
+
+            // Next month days to fill the grid
+            const remainingDays = 42 - (startingDay + totalDays);
+            for (let i = 1; i <= Math.min(remainingDays, 7); i++) {
+                const dayEl = document.createElement('button');
+                dayEl.className = 'cal-day other-month';
+                dayEl.textContent = i;
+                dayEl.disabled = true;
+                calendarDays.appendChild(dayEl);
+            }
+        }
+
+        function selectDate(year, month, day, element) {
+            document.querySelectorAll('.cal-day.selected').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+
+            selectedDate = new Date(year, month, day);
+            bookingData.date = selectedDate;
+
+            const formattedDate = `${day.toString().padStart(2, '0')}/${(month + 1).toString().padStart(2, '0')}/${year}`;
+            document.getElementById('selectedDate').textContent = formattedDate;
+
+            const dayName = dayNames[selectedDate.getDay()].substring(0, 2);
+            const displayDate = `${dayName}, ${monthNames[month].substring(0, 3)} ${day}, ${year}`;
+            document.getElementById('summaryDate').textContent = displayDate;
+
+            // Close date picker
+            document.getElementById('datePickerPopup').classList.remove('show');
+
+            updateStepper();
+            updateSummary();
+        }
+
+        // Dropdown Functions
+        function initDropdowns() {
+            // Date dropdown
+            const dateDropdown = document.getElementById('dateDropdown');
+            const datePickerPopup = document.getElementById('datePickerPopup');
+
+            dateDropdown.addEventListener('click', function (e) {
+                e.stopPropagation();
+                closeAllDropdowns();
+                datePickerPopup.classList.toggle('show');
+            });
+
+            // Time dropdown
+            const timeDropdown = document.getElementById('timeDropdown');
+            const timeMenu = document.getElementById('timeMenu');
+
+            timeDropdown.addEventListener('click', function (e) {
+                e.stopPropagation();
+                closeAllDropdowns();
+                timeMenu.classList.toggle('show');
+            });
+
+            timeMenu.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const time = this.dataset.time;
+                    bookingData.time = time;
+                    document.getElementById('selectedTime').textContent = time.replace(':', '.');
+                    document.getElementById('summaryTime').textContent = time;
+                    timeMenu.classList.remove('show');
+                    updateStepper();
+                    updateSummary();
+                });
+            });
+
+            // Duration dropdown
+            const durationDropdown = document.getElementById('durationDropdown');
+            const durationMenu = document.getElementById('durationMenu');
+
+            durationDropdown.addEventListener('click', function (e) {
+                e.stopPropagation();
+                closeAllDropdowns();
+                durationMenu.classList.toggle('show');
+            });
+
+            durationMenu.querySelectorAll('.dropdown-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    const duration = parseInt(this.dataset.duration);
+                    bookingData.duration = duration;
+                    document.getElementById('selectedDuration').textContent = `${duration} Jam`;
+                    document.getElementById('summaryDuration').textContent = `${duration} Jam`;
+                    document.getElementById('summaryDurationPrice').textContent = `${duration} jam`;
+                    durationMenu.classList.remove('show');
+                    updateStepper();
+                    updateSummary();
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function () {
+                closeAllDropdowns();
+            });
+        }
+
+        function closeAllDropdowns() {
+            document.querySelectorAll('.dropdown-menu, .date-picker-popup').forEach(menu => {
+                menu.classList.remove('show');
+            });
+        }
+
+        function updateStepper() {
+            const steps = document.querySelectorAll('.step-item');
+            const lines = document.querySelectorAll('.step-line');
+
+            // Reset all steps first
+            steps.forEach((step, index) => {
+                step.classList.remove('completed', 'active');
+                step.querySelector('.step-circle').textContent = (index + 1).toString();
+            });
+            lines.forEach(line => line.classList.remove('active'));
+
+            // Step 1 - Date
+            if (bookingData.date) {
+                steps[0].classList.add('completed');
+                steps[0].querySelector('.step-circle').innerHTML = '<i class="fas fa-check"></i>';
+                lines[0].classList.add('active');
+                steps[1].classList.add('active');
+            } else {
+                steps[0].classList.add('active');
+            }
+
+            // Step 2 - Time
+            if (bookingData.date && bookingData.time) {
+                steps[1].classList.add('completed');
+                steps[1].classList.remove('active');
+                steps[1].querySelector('.step-circle').innerHTML = '<i class="fas fa-check"></i>';
+                lines[1].classList.add('active');
+                steps[2].classList.add('active');
+            }
+
+            // Step 3 - Duration (Confirm)
+            if (bookingData.date && bookingData.time && bookingData.duration) {
+                steps[2].classList.add('completed');
+                steps[2].classList.remove('active');
+                steps[2].querySelector('.step-circle').innerHTML = '<i class="fas fa-check"></i>';
+            }
+        }
+
+        function updateSummary() {
+            const total = bookingData.pricePerHour * (bookingData.duration || 1);
+            document.getElementById('summaryTotal').textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        // Confirm booking
+        document.getElementById('confirmBooking').addEventListener('click', function () {
+            if (!bookingData.date) {
+                alert('Silakan pilih tanggal terlebih dahulu');
+                return;
+            }
+            if (!bookingData.time) {
+                alert('Silakan pilih jam terlebih dahulu');
+                return;
+            }
+
+            // Store booking data
+            localStorage.setItem('bookingData', JSON.stringify({
+                venue: bookingData.venue,
+                venueId: bookingData.venueId,
+                date: bookingData.date.toISOString(),
+                time: bookingData.time,
+                duration: bookingData.duration,
+                pricePerHour: bookingData.pricePerHour,
+                total: bookingData.pricePerHour * bookingData.duration
+            }));
+
+            // Navigate to payment page
+            window.location.href = 'pembayaran.html';
+        });
+    </script>
+</body>
+
+</html>

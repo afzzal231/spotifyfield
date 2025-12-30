@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SportifyField</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Asset/Navbar.png" alt="SportifyField Logo" class="logo-img">
+                    <span class="logo-text">SportifyField</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="lapangan.html" class="nav-link">Lapangan</a>
+                </nav>
+                <div class="nav-actions">
+                    <!-- Content will be injected by nav.js -->
+                    <a href="login.html" class="nav-link active">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <div class="login-card">
+                <div class="login-icon-wrapper">
+                    <div class="login-icon">
+                        <img src="Asset/Navbar.png" alt="SportifyField Logo" class="login-icon-img">
+                    </div>
+                </div>
+
+                <h2 class="login-title">Selamat Datang Kembali</h2>
+                <p class="login-subtitle">Login untuk melanjutkan pemesanan lapangan olahraga</p>
+
+                <div class="login-form">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <button type="button" id="loginBtn" class="btn-login">Masuk</button>
+                </div>
+
+                <div class="login-footer">
+                    <a href="forgot-password.html" class="forgot-password-link">Lupa Password?</a>
+                    <p class="register-text">
+                        Belum punya akun? <a href="register.html" class="register-link">Register di sini</a>
+                    </p>
+                    <a href="index.html" class="back-link">Kembali ke Beranda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="text-align:center;">© 2024 SportifyField</p>
+        </div>
+    </footer>
+
+    <!-- FIREBASE LOGIN SCRIPT -->
+    <!-- FIREBASE LOGIN SCRIPT -->
+    <script type="module">
+        import { login, onAuthStateChange } from "./auth.js";
+        import { initNavigation } from "./nav.js";
+
+        // Initialize Navigation UI (hides/shows dashboard link)
+        initNavigation();
+
+        // If already logged in, redirect to dashboard
+        onAuthStateChange((user) => {
+            if (user) {
+                window.location.href = "index.html";
+            }
+        });
+
+        document.getElementById("loginBtn").addEventListener("click", () => {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Harap isi email dan password");
+                return;
+            }
+
+            login(email, password)
+                .then(() => {
+                    alert("Login berhasil");
+                    window.location.href = "index.html";
+                })
+                .catch((error) => {
+                    let message = "Login gagal";
+                    if (error.code === "auth/user-not-found") {
+                        message = "Email tidak terdaftar";
+                    } else if (error.code === "auth/wrong-password") {
+                        message = "Password salah";
+                    } else if (error.code === "auth/invalid-email") {
+                        message = "Format email tidak valid";
+                    } else if (error.code === "auth/invalid-credential") {
+                        message = "Email atau password salah";
+                    }
+                    alert(message);
+                });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

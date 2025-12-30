@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - SportField</title>
+    <meta name="description" content="Konfirmasi pembayaran booking lapangan di SportField">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="Asset/Navbar.png" alt="SportField Logo" class="logo-img">
+                    <span class="logo-text">SportField</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="lapangan.html" class="nav-link active">Lapangan</a>
+                </nav>
+                <div class="nav-actions">
+                    <!-- Content will be injected by nav.js -->
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Payment Section -->
+    <section class="payment-section-v2">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-link-v2">
+                <i class="fas fa-chevron-left"></i> Kembali
+            </a>
+
+            <!-- Midtrans Badge -->
+            <div class="payment-badge">
+                <div class="badge-content">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Pembayaran aman didukung oleh <strong>Midtrans</strong></span>
+                </div>
+            </div>
+            <p class="payment-prototype-note">(Simulasi Prototipe - Tanpa Transaksi Nyata)</p>
+
+            <div class="payment-wrapper-v2">
+                <!-- Left Column - Payment Methods -->
+                <div class="payment-left-v2">
+                    <h2 class="payment-section-title">Pilih Metode Pembayaran</h2>
+
+                    <div class="payment-methods-v2">
+                        <!-- Credit/Debit Card -->
+                        <label class="payment-method-card">
+                            <input type="radio" name="paymentMethod" value="card">
+                            <div class="method-card-content">
+                                <div class="method-icon-box card">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-name">Kartu Kredit / Debit</span>
+                                    <span class="method-desc">Visa, Mastercard, JCB</span>
+                                </div>
+                                <div class="method-radio"></div>
+                            </div>
+                        </label>
+
+                        <!-- GoPay -->
+                        <label class="payment-method-card">
+                            <input type="radio" name="paymentMethod" value="gopay" checked>
+                            <div class="method-card-content">
+                                <div class="method-icon-box gopay">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-name">GoPay</span>
+                                    <span class="method-desc">Bayar dengan GoPay</span>
+                                </div>
+                                <div class="method-radio"></div>
+                            </div>
+                        </label>
+
+                        <!-- ShopeePay -->
+                        <label class="payment-method-card">
+                            <input type="radio" name="paymentMethod" value="shopeepay">
+                            <div class="method-card-content">
+                                <div class="method-icon-box shopeepay">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-name">ShopeePay</span>
+                                    <span class="method-desc">Bayar dengan ShopeePay</span>
+                                </div>
+                                <div class="method-radio"></div>
+                            </div>
+                        </label>
+
+                        <!-- Transfer Bank VA -->
+                        <label class="payment-method-card">
+                            <input type="radio" name="paymentMethod" value="transfer">
+                            <div class="method-card-content">
+                                <div class="method-icon-box transfer">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-name">Transfer Bank (VA)</span>
+                                    <span class="method-desc">BCA, Mandiri, BNI, BRI</span>
+                                </div>
+                                <div class="method-radio"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <div class="payment-right-v2">
+                    <div class="order-summary-card">
+                        <h3 class="summary-title-v2">Ringkasan Pesanan</h3>
+
+                        <div class="order-venue-info">
+                            <h4 class="order-venue-name" id="paymentVenue">Lapangan Tennis Bank Jabar</h4>
+                            <p class="order-date" id="paymentDate">Kam, 25 Des 2025</p>
+                            <p class="order-time-duration">
+                                <span id="paymentTime">18:00</span> • <span id="paymentDuration">1 jam</span>
+                            </p>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="order-pricing">
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Subtotal</span>
+                                <span class="summary-value-v2" id="paymentSubtotal">Rp 150.000</span>
+                            </div>
+                            <div class="summary-row-v2">
+                                <span class="summary-label-v2">Biaya Admin</span>
+                                <span class="summary-value-v2 text-green">Gratis</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-divider"></div>
+
+                        <div class="order-total">
+                            <span class="total-label">Total Pembayaran</span>
+                            <span class="total-value" id="paymentTotal">Rp 150.000</span>
+                        </div>
+
+                        <button class="btn-pay-now" id="payNow">
+                            Bayar Sekarang
+                        </button>
+
+                        <p class="payment-terms-v2">
+                            Dengan melanjutkan, Anda menyetujui<br>
+                            <a href="#">syarat dan ketentuan</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Footer -->
+            <div class="payment-security-footer">
+                <i class="fas fa-lock"></i>
+                <span>Transaksi Anda dilindungi dengan enkripsi SSL 256-bit</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">SportifyField</div>
+                    <p class="footer-description">Platform terpercaya Anda untuk memesan fasilitas olahraga. Memudahkan
+                        booking venue dengan mudah.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kontak Kami</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sportifyfield.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bandung, Indonesia</span>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Ikuti Kami</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 SportifyField. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initNavigation } from "./nav.js";
+        initNavigation();
+    </script>
+
+    <script>
+        const monthNames = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+        const shortMonthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun',
+            'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+        const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        const shortDayNames = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'];
+
+        // Load booking data
+        function loadBookingData() {
+            const bookingDataStr = localStorage.getItem('bookingData');
+
+            const bookingData = bookingDataStr ? JSON.parse(bookingDataStr) : {
+                venue: 'Lapangan Tennis Bank Jabar',
+                date: new Date().toISOString(),
+                time: '18:00',
+                duration: 1,
+                pricePerHour: 150000,
+                total: 150000
+            };
+
+            const bookingDate = new Date(bookingData.date);
+
+            // Format date - "Kam, 25 Des 2025"
+            const dayName = shortDayNames[bookingDate.getDay()];
+            const formattedDate = `${dayName}, ${bookingDate.getDate()} ${shortMonthNames[bookingDate.getMonth()]} ${bookingDate.getFullYear()}`;
+
+            // Update order summary
+            document.getElementById('paymentVenue').textContent = bookingData.venue;
+            document.getElementById('paymentDate').textContent = formattedDate;
+            document.getElementById('paymentTime').textContent = bookingData.time;
+            document.getElementById('paymentDuration').textContent = `${bookingData.duration} jam`;
+
+            // Update pricing
+            document.getElementById('paymentSubtotal').textContent = `Rp ${bookingData.total.toLocaleString('id-ID')}`;
+            document.getElementById('paymentTotal').textContent = `Rp ${bookingData.total.toLocaleString('id-ID')}`;
+        }
+
+        // Handle payment
+        document.getElementById('payNow').addEventListener('click', function () {
+            const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked');
+
+            const paymentMethodMap = {
+                'card': 'Kartu Kredit / Debit',
+                'gopay': 'GoPay',
+                'shopeepay': 'ShopeePay',
+                'transfer': 'Transfer Bank (VA)'
+            };
+
+            const paymentMethodText = paymentMethodMap[paymentMethod.value] || 'GoPay';
+
+            // Simulate payment processing
+            this.disabled = true;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses...';
+
+            setTimeout(() => {
+                const bookingDataStr = localStorage.getItem('bookingData');
+                const bookingData = bookingDataStr ? JSON.parse(bookingDataStr) : {
+                    venue: 'Lapangan Tennis Bank Jabar',
+                    date: new Date().toISOString(),
+                    time: '18:00',
+                    duration: 1,
+                    pricePerHour: 150000,
+                    total: 150000
+                };
+
+                // Save confirmation data
+                localStorage.setItem('confirmationData', JSON.stringify({
+                    ...bookingData,
+                    paymentMethod: paymentMethodText,
+                    customerName: 'User',
+                    customerEmail: 'user@email.com',
+                    customerPhone: '08123456789'
+                }));
+
+                // Redirect to confirmation page
+                window.location.href = 'konfirmasi-pembayaran.html';
+            }, 1500);
+        });
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', loadBookingData);
+    </script>
+</body>
+
+</html>
